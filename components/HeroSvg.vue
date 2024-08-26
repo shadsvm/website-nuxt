@@ -56,28 +56,28 @@
       </clipPath>
     </defs>
   </svg>
+
 </template>;
 
 <style>
 
   .path {
     stroke-dasharray: 500px 100px;
-    animation: animate 100s linear infinite alternate-reverse;
+    animation: animate 10s linear infinite alternate-reverse;
   }
 
   @keyframes animate {
     from {
       stroke-dashoffset: 0;
-      stroke-linejoin: miter;
-      stroke-linecap: round;
+      stroke-opacity: 0;
+
       /* stroke-dasharray: 5px; */
       /* stroke-width: 1px; */
       /* stroke-dasharray: 1px 10px 1px; */
     }
     to {
       stroke-dashoffset: 12433.8193359375;
-      stroke-linejoin:round;
-      stroke-linecap: square;
+      stroke-opacity: 1;
       /* stroke-dasharray: 100px; */
       /* stroke-width: 20px; */
 

@@ -10,6 +10,7 @@
     </main>
   <!-- <div class="absolute blur inset-0 -z-10 bg-[35%_bottom] bg-no-repeat mix-blend-screen sm:bg-[38%_bottom] md:bg-[40%_bottom] lg:bg-[44%_bottom] xl:bg-bottom forced-colors:hidden" style="background-image:url('https://headlessui.com/_next/static/media/bg-bottom.e4e0724b.jpg')" aria-hidden="true"></div> -->
   </div>
+
 </template>
 <!-- <div class="font-['David_Libre'] text-5xl text-center mx-auto">שמואל</div> -->
 <!-- <div class="absolute inset-0 -z-10 bg-top opacity-10 forced-colors:hidden" style="background-image:url('https://headlessui.com/_next/static/media/bg-noise.67fd2524.png')" aria-hidden="true"></div> -->

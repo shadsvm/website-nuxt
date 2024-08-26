@@ -24,7 +24,8 @@
       </p>
     </div>
     <div class="max-w-sm">
-      <HeroSvg />
+      <!-- <HeroSvg /> -->
+       <img src="/public/img/sticker.png"/>
     </div>
   </div>
   </section>
