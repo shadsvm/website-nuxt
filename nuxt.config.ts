@@ -28,7 +28,13 @@ export default defineNuxtConfig({
         },
       },
     ],
+    "@nuxt/eslint",
   ],
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
   tailwindcss: {
     editorSupport: true,
   },

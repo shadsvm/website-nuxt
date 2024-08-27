@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TestSvg from '~/components/TestSvg.vue';
+
 
 </script>
 
@@ -11,12 +13,10 @@
   <div class=" flex-1 flex gap-8 justify-between items-center">
     <div class="basis-2/3 space-y-4">
 
-      <div>
-
-      </div>
+      <div/>
       <div class="font-bold text-5xl">
         I'm <span class="text-gradient"> Samuel Kaminski </span>
-        <br/>
+        <br>
         Full Stack Developer
       </div>
       <p class="text-stone-500">
@@ -25,12 +25,9 @@
     </div>
     <div class="max-w-sm">
       <!-- <HeroSvg /> -->
-       <img src="/public/img/sticker.png"/>
+       <TestSvg />
     </div>
   </div>
-  </section>
-  <section class="h-[100dvh]">
-
   </section>
 </template>
 
