@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: '2024-04-03',
   // nitro: {
   //   prerender: {
   //     routes: ["/resume"],
@@ -9,33 +9,36 @@ export default defineNuxtConfig({
   // },
   devtools: { enabled: true },
   modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/image",
-    "@nuxt/content",
-    "@nuxtjs/color-mode",
-    "nuxt-lucide-icons",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          "Libre Barcode 39 Text": true,
-          "Libre Barcode 128 Text": true,
-          "David Libre": true,
-          "Space Mono": true,
-          "Unica One": true,
-
-          Fascinate: true,
-        },
-      },
-    ],
-    "@nuxt/eslint",
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
+    'nuxt-lucide-icons',
+    '@nuxtjs/google-fonts',
   ],
+  googleFonts: {
+    families: {
+      'Libre Barcode 39 Text': true,
+      'Libre Barcode 128 Text': true,
+      'David Libre': true,
+      'Space Mono': true,
+      'Unica One': true,
+      'Fascinate': true,
+      'Montserrat': true,
+      'DM Mono': true,
+    },
+  },
   eslint: {
     config: {
-      stylistic: true,
+      stylistic: {
+        indent: 'tab',
+        semi: true,
+      },
     },
   },
   tailwindcss: {
     editorSupport: true,
   },
-});
+})
