@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-lucide-icons',
     '@nuxtjs/google-fonts',
+    '@hypernym/nuxt-anime',
   ],
   googleFonts: {
     families: {
@@ -40,5 +41,11 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     editorSupport: true,
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
+  anime: {
+    composables: true,
   },
 })

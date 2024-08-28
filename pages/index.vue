@@ -1,34 +1,50 @@
 <script setup lang="ts">
+// definePageMeta({
+//   pageTransition: {
+//     name: 'page',
+//     mode: 'out-in',
+//     onBeforeEnter: (el) => {
+//       console.log('Before enter...', el)
+//     },
+//     // onEnter: (el, done) => {},
+//     // onAfterEnter: (el) => {},
+//   },
+// })
 </script>
 
 <template>
-  <section class="h-[100dvh] flex justify-center items-center flex-col">
-    <nav class="py-10">
-      <div class="font-['Libre_Barcode_39_Text'] text-5xl text-center mx-auto">
-        SVM
-      </div>
-    </nav>
-
-    <div class=" flex-1 flex gap-8 justify-between items-center">
-      <div class="basis-2/3 space-y-4">
-        <div class="font-bold text-5xl">
-          I'm <span class="text-gradient"> Samuel Kaminski </span>
-          <br>
-          Full Stack Developer
-        </div>
-        <p class="text-stone-500">
-          driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to launch with a thoughtful, hands-on approach.
-        </p>
-      </div>
-      <div class="w-full max-w-xs">
-        <img
-          src="/img/memoji-wink.png"
-          alt="Cartoon-style picuter of me"
-          class="bg-white/60 rounded-full max-w-52"
+  <main class="max-w-5xl mx-auto">
+    <section class="h-[100dvh] flex justify-center items-center flex-col">
+      <nav class="py-10">
+        <NuxtLink
+          :href="'/test'"
+          class="font-['Libre_Barcode_39_Text'] text-5xl text-center mx-auto"
         >
+          SVM
+        </NuxtLink>
+      </nav>
+
+      <div class=" flex-1 flex gap-8 justify-between items-center">
+        <div class="basis-2/3 space-y-4">
+          <div class="font-bold text-5xl">
+            I'm <span class="text-gradient"> Samuel Kaminski </span>
+            <br>
+            Full Stack Developer
+          </div>
+          <p class="text-stone-500">
+            driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to launch with a thoughtful, hands-on approach.
+          </p>
+        </div>
+        <div class="w-full max-w-xs">
+          <img
+            src="/img/memoji-wink.png"
+            alt="Cartoon-style picuter of me"
+            class="bg-white/60 rounded-full max-w-52"
+          >
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 
 <style>
