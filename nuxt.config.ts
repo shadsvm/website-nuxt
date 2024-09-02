@@ -32,6 +32,8 @@ export default defineNuxtConfig({
       'Fascinate': true,
       'Montserrat': true,
       'DM Mono': true,
+      'Poppins': true,
+      'Lato': true,
     },
   },
   eslint: {
