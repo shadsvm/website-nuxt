@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   //     ignore: ["/dynamic"],
   //   },
   // },
+  experimental: {
+    inlineRouteRules: true,
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -34,8 +37,9 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: {
-        indent: 'tab',
-        semi: true,
+        indent: 2,
+        semi: false,
+        quotes: 'single',
       },
     },
   },
@@ -45,7 +49,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
-  anime: {
-    composables: true,
-  },
+  // anime: {
+  //   composables: true,
+  // },
 })

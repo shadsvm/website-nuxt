@@ -3,12 +3,19 @@
 </script>
 
 <template>
-  <main>
-    <ContentList path="/md" v-slot="{ list }">
-      <div v-for="article in list" :key="article._path">
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.description }}</p>
-      </div>
-    </ContentList>
-  </main>
+	<main>
+		<ContentList
+			v-slot="{ list }"
+			path="/md"
+		>
+			<NuxtLink
+				v-for="article in list"
+				:key="article._path"
+				:href="article._path"
+			>
+				<h2>{{ article.title }}</h2>
+				<p>{{ article.description }}</p>
+			</NuxtLink>
+		</ContentList>
+	</main>
 </template>
