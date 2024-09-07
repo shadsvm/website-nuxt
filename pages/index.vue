@@ -5,10 +5,13 @@
       <div class="h-full flex flex-col-reverse md:flex-row gap-8 justify-center md:justify-between items-center ">
         <!-- Hero buttons -->
         <div class="space-y-8">
-          <section class="font-bold text-2xl sm:text-3xl lg:text-4xl text-center md:text-start text-stone-400 tracking-widest">
-            I'm <span class="text-black dark:text-white font-extrabold tracking-widest"> Samuel Kaminski </span>
-            <br>
-            Full Stack Developer
+          <section class="">
+            <h1 class="text-3xl sm:text-3xl lg:text-4xl text-center md:text-start text-black tracking-widest">
+              Samuel Kaminski
+            </h1>
+            <h4 class="text-stone-600 dark:text-white tracking-widest">
+              Full Stack Developer
+            </h4>
           </section>
 
           <section class="text-stone-500 text-justify tracking-wider">
@@ -31,40 +34,17 @@
           </section>
         </div>
         <!-- Chat alike -->
-        <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center">
+        <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center mb-10">
           <section>
             <img
               src="/img/memoji-wink.png"
               alt="Cartoon-style picuter of me"
-              class="bg-white/60 rounded-full max-w-52"
+              class="bg-white shadow-lg rounded-full max-w-52"
             >
           </section>
-
-          <section
-            ref="bubble"
-            class="bubble px-5 py-3 flex gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full"
-          >
-            <p
-              ref="message"
-              class="message hidden font-[Poppins] text-right tracking-wider font-semibold text-nowrap text-black"
-            >
-              {{ test }}
-            </p>
-            <span
-              ref="loading"
-              class="loading flex gap-2 "
-            >
-              <div class="loading-dot w-4 h-4 bg-gray-500 rounded-full" />
-              <div class="loading-dot w-4 h-4 bg-gray-500 rounded-full" />
-              <div class="loading-dot w-4 h-4 bg-gray-500 rounded-full" />
-            </span>
+          <section class="flex flex-col gap-2 justify-start items-end border border-red-500 w-full">
+            <ChatMessage :items="messages" />
           </section>
-          <p
-
-            class="px-5 py-3 flex gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full  font-[Poppins] text-right tracking-wider font-semibold text-nowrap text-black"
-          >
-            {{ test }}
-          </p>
         </div>
       </div>
     </section>
@@ -75,57 +55,15 @@
 import anime from 'animejs'
 import type { BioLink } from '~/app.vue'
 
-const bubble = ref()
-const message = ref()
-const loading = ref()
 const links = useState<BioLink[]>('links')
-const test = ref('Hi, let\'s get in touch 👋')
-// const msgwidth = useElementSize(message)
-
+const messages = useState<string[]>('messages')
 onMounted(() => {
-  const animations = anime.timeline({
+  anime({
     targets: 'section',
     translateY: ['50', 0],
     opacity: [0, 1],
     delay: anime.stagger(250),
-  }).add({
-    targets: '.loading-dot',
-    opacity: [
-      { value: 0.6, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-      { value: 0.6, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-      { value: 0.6, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-    ],
-    scale: [
-      { value: 0.7, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-      { value: 0.7, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-      { value: 0.7, easing: 'easeOutSine', duration: 700 },
-      { value: 1, easing: 'easeOutSine', duration: 700 },
-    ],
-    delay: anime.stagger(300, {
-      grid: [1, 3],
-      from: 'first',
-    }),
-  }).add({
-    targets: ['.bubble'],
-    width: [104, test.value.length * 7 + 40],
-    easing: 'easeOutSine',
-    duration: 200,
-    begin: function () {
-      loading.value.style.display = 'none'
-      message.value.style.display = 'block'
-    },
-  }).add({
-    targets: '.message',
-    opacity: [0, 1],
-    easing: 'easeOutSine',
-    duration: 300,
   })
-  animations.play()
 })
 </script>
 

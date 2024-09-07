@@ -3,15 +3,17 @@
     v-for="(item, index) in items"
     :key="index"
     ref="itemRefs"
-    class="bubble"
+    class="bubble opacity-0 relative"
   >
     <p
-      class="message hidden "
+      ref="messageRefs"
+      class="message text-transparent"
     >
-      <!-- {{ text }} -->
+      {{ item }}
     </p>
     <span
-      class="loading flex gap-2 "
+      ref="loadingRefs"
+      class="loading flex gap-2 absolute"
     >
       <div
         v-for="i in 3"
@@ -30,67 +32,76 @@ interface Props {
 }
 
 const { items } = defineProps<Props>()
-const itemRefs = ref([])
-const message = ref()
-const loading = ref()
-// const { width: msgWidth } = useElementSize(message)
-// const { width: bubbleWidth } = useElementSize(bubble)
-// const msgwidth = useElementSize(message)
+const itemRefs = ref<Ref[]>([])
+const messageRefs = ref<HTMLDivElement[]>()
+const loadingRefs = ref<HTMLDivElement[]>()
+const loadingSpeed = 600
 
 onMounted(() => {
   const timeline = anime.timeline({
     easing: 'easeInOutSine',
-    duration: 750,
   })
 
-  // Loop through refs and animate them in sequence
-  itemRefs.value.forEach((el) => {
-    if (el) {
-      timeline.add({
-        targets: '.loading-dot',
-        opacity: [
-          { value: 0.6, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-          { value: 0.6, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-          { value: 0.6, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-        ],
-        scale: [
-          { value: 0.7, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-          { value: 0.7, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-          { value: 0.7, easing: 'easeOutSine', duration: 700 },
-          { value: 1, easing: 'easeOutSine', duration: 700 },
-        ],
-        delay: anime.stagger(300, {
-          grid: [1, 3],
-          from: 'first',
-        }),
-      }).add({
-        targets: ['.bubble'],
-        width: [104, 300],
-        easing: 'easeOutSine',
-        duration: 200,
-        begin: function () {
-          loading.value.style.display = 'none'
-          message.value.style.display = 'block'
-        },
-      }).add({
-        targets: '.message',
-        opacity: [0, 1],
-        easing: 'easeOutSine',
-        duration: 300,
-      })
-    }
+  itemRefs.value.forEach((bubble, index) => {
+    if (!bubble || !messageRefs.value || !loadingRefs.value) return
+    const message = messageRefs.value[index]
+    const loading = loadingRefs.value[index]
+
+    timeline.add({
+      targets: bubble,
+      easing: 'easeOutSine',
+      duration: 1000,
+      opacity: 1,
+    }).add({
+      targets: '.dot',
+      opacity: [
+        { value: 0.6, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 0.6, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 0.6, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+      ],
+      scale: [
+        { value: 0.7, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 0.7, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 0.7, easing: 'easeOutSine', duration: loadingSpeed },
+        { value: 1, easing: 'easeOutSine', duration: loadingSpeed },
+      ],
+      delay: anime.stagger(300, {
+        grid: [1, 3],
+        from: 'first',
+      }),
+    }).add({
+      targets: bubble,
+      width: [loading.offsetWidth + 40, message.offsetWidth + 40],
+      height: [loading.offsetHeight + 30, message.offsetHeight + 24],
+
+      easing: 'easeOutSine',
+      duration: 200,
+      begin: function () {
+        loading.style.display = 'none'
+        message.style.color = 'black'
+      },
+    }).add({
+      targets: '.message',
+      opacity: 1,
+      easing: 'easeOutSine',
+    })
   })
+  timeline.play()
 })
 </script>
 
 <style>
 .bubble{
-@apply px-5 py-3 flex gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold text-nowrap text-black
+@apply px-5 py-3 flex justify-center items-center gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold whitespace-pre text-black shadow
+}
+
+.message {
+@apply w-min text-start
 }
 
 .dot {

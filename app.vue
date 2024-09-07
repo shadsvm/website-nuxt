@@ -34,6 +34,10 @@ useState<BioLink[]>('links', () => [
   },
 
 ])
+
+useState<string[]>('messages', () => [
+  'Interested in collaborating? 😄', 'Drop me a message', 'I’ll get back to you soon',
+])
 </script>
 
 <style>
