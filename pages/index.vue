@@ -1,33 +1,37 @@
 <template>
-  <!-- <ClientOnly> -->
-  <div class="max-w-5xl mx-auto">
-    <!-- <pre>{{ JSON.stringify({ loadingWidth, messageWidth }, null, 2) }}</pre> -->
-    <section class="h-[100dvh] flex justify-center items-center flex-col">
-      <nav class="py-10">
-        <NuxtLink
-          :href="'/test'"
-          class="font-['Libre_Barcode_39_Text'] text-5xl text-center mx-auto"
-        >
-          SVM
-        </NuxtLink>
-      </nav>
-
-      <div class="h-full flex gap-8 justify-between items-center">
-        <!--  -->
-        <div class="space-y-4">
-          <section class="font-bold text-5xl">
-            I'm <span class="text-gradient"> Samuel Kaminski </span>
+  <main class="max-w-5xl mx-auto">
+    <!--  -->
+    <section class="h-[100dvh] flex justify-center items-center flex-col px-10">
+      <div class="h-full flex flex-col-reverse md:flex-row gap-8 justify-center md:justify-between items-center ">
+        <!-- Hero buttons -->
+        <div class="space-y-8">
+          <section class="font-bold text-2xl sm:text-3xl lg:text-4xl text-center md:text-start text-stone-400 tracking-widest">
+            I'm <span class="text-black dark:text-white font-extrabold tracking-widest"> Samuel Kaminski </span>
             <br>
             Full Stack Developer
           </section>
 
-          <section class="text-stone-500 ">
+          <section class="text-stone-500 text-justify tracking-wider">
             driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to
             launch with a thoughtful, hands-on approach.
           </section>
+          <section class="flex gap-8 flex-wrap">
+            <NuxtLink
+              v-for="link in links"
+              :key="link.href"
+              :href="link.href"
+              class="flex justify-center items-center gap-2 text-lg hover:bg-stone-500/20 transition duration-300 px-4 py-2 rounded-full"
+            >
+              <Icon
+                :name="link.icon"
+                size="20"
+              />
+              {{ link.label }}
+            </NuxtLink>
+          </section>
         </div>
-        <!--  -->
-        <div class=" w-full max-w-xs flex flex-col gap-5 border items-end">
+        <!-- Chat alike -->
+        <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center">
           <section>
             <img
               src="/img/memoji-wink.png"
@@ -44,7 +48,7 @@
               ref="message"
               class="message hidden font-[Poppins] text-right tracking-wider font-semibold text-nowrap text-black"
             >
-              Hi, give me a call 👋
+              {{ test }}
             </p>
             <span
               ref="loading"
@@ -55,25 +59,31 @@
               <div class="loading-dot w-4 h-4 bg-gray-500 rounded-full" />
             </span>
           </section>
+          <p
+
+            class="px-5 py-3 flex gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full  font-[Poppins] text-right tracking-wider font-semibold text-nowrap text-black"
+          >
+            {{ test }}
+          </p>
         </div>
       </div>
     </section>
-  </div>
-  <!-- </ClientOnly> -->
+  </main>
 </template>
 
 <script setup lang="ts">
 import anime from 'animejs'
-// import { useElementSize } from '@vueuse/core'
+import type { BioLink } from '~/app.vue'
 
 const bubble = ref()
 const message = ref()
 const loading = ref()
-// const { width: messageWidth } = useElementSize(message)
-// const { width: loadingWidth } = useElementSize(loading)
+const links = useState<BioLink[]>('links')
+const test = ref('Hi, let\'s get in touch 👋')
+// const msgwidth = useElementSize(message)
 
 onMounted(() => {
-  const test = anime.timeline({
+  const animations = anime.timeline({
     targets: 'section',
     translateY: ['50', 0],
     opacity: [0, 1],
@@ -102,7 +112,7 @@ onMounted(() => {
     }),
   }).add({
     targets: ['.bubble'],
-    width: [104, 200],
+    width: [104, test.value.length * 7 + 40],
     easing: 'easeOutSine',
     duration: 200,
     begin: function () {
@@ -115,7 +125,7 @@ onMounted(() => {
     easing: 'easeOutSine',
     duration: 300,
   })
-  test.play()
+  animations.play()
 })
 </script>
 

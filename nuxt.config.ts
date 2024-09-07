@@ -18,9 +18,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
-    'nuxt-lucide-icons',
     '@nuxtjs/google-fonts',
     '@hypernym/nuxt-anime',
+    '@nuxt/icon',
   ],
   googleFonts: {
     families: {
@@ -34,6 +34,8 @@ export default defineNuxtConfig({
       'DM Mono': true,
       'Poppins': true,
       'Lato': true,
+      'Fira Mono': true,
+      'Source Code Pro': true,
     },
   },
   eslint: {

@@ -17,11 +17,11 @@
     "@hypernym/nuxt-anime": "^2.1.1",
     "@nuxt/content": "^2.13.2",
     "@nuxt/eslint": "^0.5.5",
+    "@nuxt/icon": "^1.5.0",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/color-mode": "^3.4.4",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@vueuse/nuxt": "^11.0.3",
-    "nuxt-lucide-icons": "^1.0.5"
+    "@vueuse/nuxt": "^11.0.3"
   }
 }
