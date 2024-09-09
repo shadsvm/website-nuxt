@@ -36,12 +36,12 @@ useState<BioLink[]>('links', () => [
 ])
 
 useState<string[]>('messages', () => [
-  'Interested in collaborating? 😄', 'Drop me a message', 'I’ll get back to you soon',
+  'Interested in collaborating? 😄', 'Drop me a message', 'I’ll get back to you',
 ])
 </script>
 
 <style>
-html {
+  html {
     scroll-behavior: smooth;
   }
 
@@ -50,23 +50,7 @@ html {
     background-size: 200px 200px;
     background-position: 0 0;
     @apply bg-zinc-50 text-black dark:bg-neutral-900 dark:text-white font-['Source_Code_Pro']
-
   }
-
-  h1,h2,h3 {
-    @apply text-3xl tracking-widest
-  }
-
-  .page-enter-active,
-  .page-leave-active {
-    transition: all 0.4s;
-  }
-  .page-enter-from,
-  .page-leave-to {
-    opacity: 0;
-    filter: blur(1rem);
-  }
-
   body::before {
   --line: color-mix(in lch, canvasText 25%, transparent);
   --size: 40px;
@@ -86,5 +70,18 @@ html {
   mask: linear-gradient(-15deg, transparent 70%, white);
   top: 0;
   z-index: -1;
+  }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: all 0.4s;
+  }
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 0;
+    filter: blur(1rem);
+  }
+  .border{
+    @apply border-red-500
   }
 </style>

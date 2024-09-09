@@ -2,22 +2,26 @@
   <main class="max-w-5xl mx-auto">
     <!--  -->
     <section class="h-[100dvh] flex justify-center items-center flex-col px-10">
+      <!-- Header,Links & ChatMessage -->
       <div class="h-full flex flex-col-reverse md:flex-row gap-8 justify-center md:justify-between items-center ">
-        <!-- Hero buttons -->
-        <div class="space-y-8">
+        <!-- Header,Links -->
+        <div class="flex flex-col gap-6 justify-center items-center text-center md:text-start md:justify-start md:items-start">
+          <!-- Header -->
           <section class="">
-            <h1 class="text-3xl sm:text-3xl lg:text-4xl text-center md:text-start text-black tracking-widest">
+            <h1 class="text-3xl sm:text-3xl lg:text-4xl  text-black tracking-widest">
               Samuel Kaminski
             </h1>
-            <h4 class="text-stone-600 dark:text-white tracking-widest">
+            <h4 class="text-stone-600 dark:text-white tracking-widest ">
               Full Stack Developer
             </h4>
           </section>
-
-          <section class="text-stone-500 text-justify tracking-wider">
+          <!-- Filler -->
+          <section class="text-stone-500 text-justify tracking-wider max-w-sm md:max-w-md">
             driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to
             launch with a thoughtful, hands-on approach.
           </section>
+
+          <!-- Links -->
           <section class="flex gap-8 flex-wrap">
             <NuxtLink
               v-for="link in links"
@@ -33,6 +37,7 @@
             </NuxtLink>
           </section>
         </div>
+
         <!-- Chat alike -->
         <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center mb-10">
           <section>
@@ -42,7 +47,7 @@
               class="bg-white shadow-lg rounded-full max-w-52"
             >
           </section>
-          <section class="flex flex-col gap-2 justify-start items-end border border-red-500 w-full">
+          <section class="flex flex-col gap-2 justify-start items-end  w-full">
             <ChatMessage :items="messages" />
           </section>
         </div>
@@ -57,6 +62,7 @@ import type { BioLink } from '~/app.vue'
 
 const links = useState<BioLink[]>('links')
 const messages = useState<string[]>('messages')
+
 onMounted(() => {
   anime({
     targets: 'section',
