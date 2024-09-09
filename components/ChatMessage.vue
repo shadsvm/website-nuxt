@@ -50,8 +50,10 @@ onMounted(() => {
     timeline.add({
       targets: bubble,
       easing: 'easeOutSine',
-      duration: 1000,
+      duration: 200,
       opacity: 1,
+      scale: [0, 1],
+      translateX: [150, 0],
     }).add({
       targets: '.dot',
       opacity: [
@@ -86,8 +88,9 @@ onMounted(() => {
         message.style.color = 'black'
       },
     }).add({
-      targets: '.message',
-      opacity: 1,
+      targets: message,
+      opacity: [0, 1],
+      duration: 200,
       easing: 'easeOutSine',
     })
   })

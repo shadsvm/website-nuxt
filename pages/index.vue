@@ -8,7 +8,7 @@
         <div class="flex flex-col gap-6 justify-center items-center text-center md:text-start md:justify-start md:items-start">
           <!-- Header -->
           <section class="">
-            <h1 class="text-3xl sm:text-3xl lg:text-4xl  text-black tracking-widest">
+            <h1 class="text-3xl sm:text-3xl lg:text-4xl  text-black dark:text-white font-semibold tracking-widest">
               Samuel Kaminski
             </h1>
             <h4 class="text-stone-600 dark:text-white tracking-widest ">
