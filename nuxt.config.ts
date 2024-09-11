@@ -1,15 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  // nitro: {
-  //   prerender: {
-  //     routes: ["/resume"],
-  //     ignore: ["/dynamic"],
-  //   },
-  // },
-  experimental: {
-    inlineRouteRules: true,
-  },
+  app: { pageTransition: { name: 'page', mode: 'out-in' } },
+  experimental: { inlineRouteRules: true },
   devtools: { enabled: true },
   modules: [
     '@nuxt/image',
@@ -20,11 +13,21 @@ export default defineNuxtConfig({
     '@hypernym/nuxt-anime',
     '@nuxt/ui',
   ],
+
+  eslint: {
+    config: {
+      stylistic: {
+        indent: 2,
+        semi: false,
+        quotes: 'single',
+      },
+    },
+  },
+  tailwindcss: {
+    exposeConfig: true,
+  },
   googleFonts: {
     families: {
-      'Libre Barcode 39 Text': true,
-      'Libre Barcode 128 Text': true,
-      'David Libre': true,
       'Space Mono': true,
       'Unica One': true,
       'Fascinate': true,
@@ -36,22 +39,5 @@ export default defineNuxtConfig({
       'Source Code Pro': true,
     },
   },
-  eslint: {
-    config: {
-      stylistic: {
-        indent: 2,
-        semi: false,
-        quotes: 'single',
-      },
-    },
-  },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-  },
-  tailwindcss: {
-    exposeConfig: true,
-  },
-  // anime: {
-  //   composables: true,
-  // },
+
 })
