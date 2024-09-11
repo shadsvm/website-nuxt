@@ -48,7 +48,9 @@
             >
           </section>
           <section class="flex flex-col gap-2 justify-start items-end  w-full">
-            <ChatMessage :items="messages" />
+            <ChatMessage
+              :items="messages"
+            />
           </section>
         </div>
       </div>
@@ -74,6 +76,9 @@ onMounted(() => {
 </script>
 
 <style>
+section{
+  @apply opacity-0
+}
 .text-gradient{
   color: #2ea8ff;
   background-image: -webkit-linear-gradient(45deg, #2ea8ff 0%, #d900ff 100%);
