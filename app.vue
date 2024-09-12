@@ -5,12 +5,24 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'svm bio',
+  ogTitle: 'svm bio',
+  description: 'Svm business card',
+  ogDescription: 'Svm business card',
+  ogImage: '/img/memoji-wink.png',
+  twitterCard: 'summary_large_image',
+})
+useState<string[]>('messages', () => [
+  'Hi, thats my business card 👋',
+  'Anyway, lets get to business 😏',
+  'Drop me a message, see ya',
+])
 export type BioLink = {
   label: string
   href: string
   icon: string
 }
-
 useState<BioLink[]>('links', () => [
   {
     label: 'Github',
@@ -24,19 +36,14 @@ useState<BioLink[]>('links', () => [
   },
   {
     label: 'Resume',
-    href: 'https://github.com/shadsvm',
+    href: '/md/resume',
     icon: 'uil:file',
   },
   {
-    label: 'contact@svm.engineer',
-    href: 'mailto:contact@svm.engineer',
+    label: 'hello@svm.engineer',
+    href: 'mailto:hello@svm.engineer',
     icon: 'uil:envelope',
   },
-
-])
-
-useState<string[]>('messages', () => [
-  'Interested in collaborating? 😄', 'Drop me a message', 'I’ll get back to you',
 ])
 </script>
 

@@ -13,7 +13,15 @@ export default defineNuxtConfig({
     '@hypernym/nuxt-anime',
     '@nuxt/ui',
   ],
-
+  content: {
+    highlight: {
+      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
+      theme: {
+        dark: 'github-dark',
+        default: 'github-light',
+      },
+    },
+  },
   eslint: {
     config: {
       stylistic: {
@@ -28,16 +36,10 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Space Mono': true,
-      'Unica One': true,
-      'Fascinate': true,
-      'Montserrat': true,
-      'DM Mono': true,
-      'Poppins': true,
       'Lato': true,
-      'Fira Mono': true,
+      'Poppins': true,
+      'Space Mono': true,
       'Source Code Pro': true,
     },
   },
-
 })

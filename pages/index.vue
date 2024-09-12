@@ -41,11 +41,11 @@
         <!-- Chat alike -->
         <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center mb-10">
           <section>
-            <img
+            <NuxtImg
               src="/img/memoji-wink.png"
               alt="Cartoon-style picuter of me"
               class="bg-white shadow-lg rounded-full max-w-52"
-            >
+            />
           </section>
           <section class="flex flex-col gap-2 justify-start items-end  w-full">
             <ChatMessage
@@ -78,14 +78,5 @@ onMounted(() => {
 <style>
 section{
   @apply opacity-0
-}
-.text-gradient{
-  color: #2ea8ff;
-  background-image: -webkit-linear-gradient(45deg, #2ea8ff 0%, #d900ff 100%);
-  background-clip: text;
-  /* text-fill-color: transparent; */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
 }
 </style>
