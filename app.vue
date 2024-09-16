@@ -1,7 +1,9 @@
 <template>
-  <NuxtLoadingIndicator />
-  <NuxtRouteAnnouncer />
-  <NuxtPage />
+  <Html lang="en">
+    <NuxtLoadingIndicator />
+    <NuxtRouteAnnouncer />
+    <NuxtPage />
+  </Html>
 </template>
 
 <script setup lang="ts">
@@ -90,5 +92,9 @@ useState<BioLink[]>('links', () => [
   }
   .border{
     @apply border-red-500
+  }
+
+  h1, h2 {
+    @apply tracking-widest
   }
 </style>

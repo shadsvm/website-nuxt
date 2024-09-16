@@ -20,7 +20,7 @@
     "@nuxt/eslint": "^0.5.6",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/robots": "^4.1.6",
+    "@nuxtjs/robots": "^4.1.7",
     "@nuxtjs/seo": "^2.0.0-rc.21",
     "@vueuse/nuxt": "^11.0.3"
   }

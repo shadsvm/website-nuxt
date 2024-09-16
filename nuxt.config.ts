@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@hypernym/nuxt-anime',
     '@nuxt/ui',
+    '@nuxtjs/robots',
   ],
   content: {
     highlight: {

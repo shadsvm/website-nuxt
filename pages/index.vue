@@ -7,13 +7,13 @@
         <!-- Header,Links -->
         <div class="flex flex-col gap-6 justify-center items-center text-center md:text-start md:justify-start md:items-start">
           <!-- Header -->
-          <section class="">
-            <h1 class="text-3xl sm:text-3xl lg:text-4xl  text-black dark:text-white font-semibold tracking-widest">
+          <section>
+            <h1 class="text-3xl sm:text-3xl lg:text-4xl font-semibold ">
               Samuel Kaminski
             </h1>
-            <h4 class="text-stone-600 dark:text-white tracking-widest ">
+            <h2 class=" ">
               Full Stack Developer
-            </h4>
+            </h2>
           </section>
           <!-- Filler -->
           <section class="text-stone-500 text-justify tracking-wider max-w-sm md:max-w-md">
@@ -42,6 +42,10 @@
         <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center mb-10">
           <section>
             <NuxtImg
+              format="webp"
+              fit="inside"
+              width="200"
+              height="200"
               src="/img/memoji-wink.png"
               alt="Cartoon-style picuter of me"
               class="bg-white shadow-lg rounded-full max-w-52"
