@@ -7,7 +7,7 @@
   >
     <p
       ref="messageRefs"
-      class="message text-transparent"
+      class="message text-white!"
     >
       {{ item }}
     </p>
@@ -78,9 +78,9 @@ onMounted(() => {
       }),
     }).add({
       targets: bubble,
+      borderBottomRightRadius: ['0px', '9999px'],
       width: [loading.offsetWidth + 40, message.offsetWidth + 40],
       height: [loading.offsetHeight + 30, message.offsetHeight + 24],
-
       easing: 'easeOutSine',
       duration: 200,
       begin: function () {
@@ -100,7 +100,7 @@ onMounted(() => {
 
 <style>
 .bubble{
-@apply px-5 py-3 flex justify-center items-center gap-3 w-min bg-gray-50 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold whitespace-pre text-black shadow
+@apply px-5 py-3 flex justify-center items-center gap-3 w-min  text-white bg-white dark:bg-stone-200 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold whitespace-pre  shadow
 }
 
 .message {

@@ -1,63 +1,53 @@
 <template>
-  <main class="max-w-5xl mx-auto">
-    <!--  -->
-    <section class="h-[100dvh] flex justify-center items-center flex-col px-10">
-      <!-- Header,Links & ChatMessage -->
-      <div class="h-full flex flex-col-reverse md:flex-row gap-8 justify-center md:justify-between items-center ">
-        <!-- Header,Links -->
-        <div class="flex flex-col gap-6 justify-center items-center text-center md:text-start md:justify-start md:items-start">
-          <!-- Header -->
-          <section>
-            <h1 class="text-3xl sm:text-3xl lg:text-4xl font-semibold ">
-              Samuel Kaminski
-            </h1>
-            <h2 class=" ">
-              Full Stack Developer
-            </h2>
-          </section>
-          <!-- Filler -->
-          <section class="text-stone-500 text-justify tracking-wider max-w-sm md:max-w-md">
-            driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to
-            launch with a thoughtful, hands-on approach.
-          </section>
+  <main class="max-w-3xl mx-auto h-[100dvh] flex flex-col justify-center items-center  gap-5  px-10">
+    <!-- Header -->
 
-          <!-- Links -->
-          <section class="flex gap-8 flex-wrap">
-            <NuxtLink
-              v-for="link in links"
-              :key="link.href"
-              :href="link.href"
-              class="flex justify-center items-center gap-2 text-lg hover:bg-stone-500/20 transition duration-300 px-4 py-2 rounded-full"
-            >
-              <Icon
-                :name="link.icon"
-                size="20"
-              />
-              {{ link.label }}
-            </NuxtLink>
-          </section>
-        </div>
+    <section class="w-full flex justify-start items-center gap-4 sm:gap-6 ">
+      <NuxtImg
+        format="webp"
+        fit="inside"
+        width="75"
+        height="75"
+        src="/img/memoji-wink.png"
+        alt="Cartoon-style picuter of me"
+        class="bg-white/20 shadow-lg rounded-full max-w-20"
+      />
 
-        <!-- Chat alike -->
-        <div class=" w-full max-w-xs flex flex-col justify-end gap-5 items-center mb-10">
-          <section>
-            <NuxtImg
-              format="webp"
-              fit="inside"
-              width="200"
-              height="200"
-              src="/img/memoji-wink.png"
-              alt="Cartoon-style picuter of me"
-              class="bg-white shadow-lg rounded-full max-w-52"
-            />
-          </section>
-          <section class="flex flex-col gap-2 justify-start items-end  w-full">
-            <ChatMessage
-              :items="messages"
-            />
-          </section>
-        </div>
-      </div>
+      <header>
+        <h1 class="text-3xl sm:text-4xl font-semibold ">
+          Samuel Kaminski
+        </h1>
+        <h2 class="text-stone-300 text-lg">
+          Senior Full Stack Developer
+        </h2>
+      </header>
+    </section>
+
+    <!-- Filler -->
+    <section class="text-stone-500 text-justify tracking-wider px-4">
+      driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to
+      launch with a thoughtful, hands-on approach.
+    </section>
+    <!-- Links -->
+    <section class="w-full flex gap-2 flex-wrap ">
+      <NuxtLink
+        v-for="link in links"
+        :key="link.href"
+        :href="link.href"
+        class="flex justify-center items-center gap-2 text-lg hover:bg-stone-500/20 transition duration-300 px-4 py-2 rounded-full"
+      >
+        <Icon
+          :name="link.icon"
+          size="20"
+        />
+        {{ link.label }}
+      </NuxtLink>
+    </section>
+    <!-- Chat alike -->
+    <section class="flex flex-col gap-2 justify-start  items-end my-5 w-full">
+      <ChatMessage
+        :items="messages"
+      />
     </section>
   </main>
 </template>

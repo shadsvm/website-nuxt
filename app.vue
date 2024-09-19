@@ -1,12 +1,15 @@
 <template>
-  <Html lang="en">
-    <NuxtLoadingIndicator />
-    <NuxtRouteAnnouncer />
-    <NuxtPage />
-  </Html>
+  <NuxtLoadingIndicator />
+  <NuxtRouteAnnouncer />
+  <NuxtPage />
 </template>
 
 <script setup lang="ts">
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+})
 useSeoMeta({
   title: 'svm bio',
   ogTitle: 'svm bio',
@@ -16,9 +19,9 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 useState<string[]>('messages', () => [
-  'Hi, thats my business card 👋',
-  'Anyway, lets get to business 😏',
-  'Drop me a message, see ya',
+  'Hi, thanks for coming in 👋',
+  'Would You like to collaborate?',
+  'Send message, I will respond asap.',
 ])
 export type BioLink = {
   label: string
@@ -33,7 +36,7 @@ useState<BioLink[]>('links', () => [
   },
   {
     label: 'LinkedIn',
-    href: 'https://github.com/shadsvm',
+    href: 'https://linkedin.com/in/sam-kmn',
     icon: 'uil:linkedin',
   },
   {

@@ -16,7 +16,6 @@ export default defineNuxtConfig({
   ],
   content: {
     highlight: {
-      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
         dark: 'github-dark',
         default: 'github-light',
@@ -32,9 +31,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  tailwindcss: {
-    exposeConfig: true,
-  },
   googleFonts: {
     families: {
       'Lato': true,
@@ -42,5 +38,8 @@ export default defineNuxtConfig({
       'Space Mono': true,
       'Source Code Pro': true,
     },
+  },
+  tailwindcss: {
+    configPath: 'tailwind.config',
   },
 })
