@@ -22,7 +22,10 @@
           />
         </div>
         <article>
-          <ContentRenderer :value="doc" />
+          <ContentRenderer
+            :value="doc"
+            class="text-sm p-4"
+          />
         </article>
       </template>
       <template #not-found>

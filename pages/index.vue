@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-3xl mx-auto h-[100dvh] flex flex-col justify-center items-center  gap-5 px-2 sm:px-5">
+  <main class="max-w-3xl mx-auto h-[100dvh] flex flex-col justify-center items-center  gap-5 px-3 sm:px-5">
     <!-- Header -->
 
     <section class="w-full flex justify-start items-center gap-4 sm:gap-6 ">
