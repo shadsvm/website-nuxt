@@ -37,6 +37,7 @@ export default defineNuxtConfig({
       'Poppins': true,
       'Space Mono': true,
       'Source Code Pro': true,
+      'DM Mono': true,
     },
   },
   tailwindcss: {

@@ -61,7 +61,7 @@ useState<BioLink[]>('links', () => [
     background-image: url("/img/noise.png");
     background-size: 200px 200px;
     background-position: 0 0;
-    @apply bg-zinc-50 text-black dark:bg-neutral-900 dark:text-white font-['Source_Code_Pro']
+    @apply text-sm bg-zinc-50 text-black dark:bg-neutral-900 dark:text-white font-['DM_Mono']
   }
   body::before {
   --line: color-mix(in lch, canvasText 25%, transparent);

@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-3xl mx-auto h-[100dvh] flex flex-col justify-center items-center  gap-5  px-10">
+  <main class="max-w-3xl mx-auto h-[100dvh] flex flex-col justify-center items-center  gap-5 px-2 sm:px-5">
     <!-- Header -->
 
     <section class="w-full flex justify-start items-center gap-4 sm:gap-6 ">
@@ -14,17 +14,17 @@
       />
 
       <header>
-        <h1 class="text-3xl sm:text-4xl font-semibold ">
+        <h1 class="text-xl sm:text-4xl font-semibold ">
           Samuel Kaminski
         </h1>
-        <h2 class="text-stone-300 text-lg">
-          Senior Full Stack Developer
+        <h2 class="dark:text-stone-300 sm:text-lg">
+          Full Stack Developer
         </h2>
       </header>
     </section>
 
     <!-- Filler -->
-    <section class="text-stone-500 text-justify tracking-wider px-4">
+    <section class="text-stone-500 text-xs text-justify tracking-wider px-4">
       driven by a passion for technology and a love for bringing ideas to life. I guide products from concept to
       launch with a thoughtful, hands-on approach.
     </section>
@@ -34,7 +34,7 @@
         v-for="link in links"
         :key="link.href"
         :href="link.href"
-        class="flex justify-center items-center gap-2 text-lg hover:bg-stone-500/20 transition duration-300 px-4 py-2 rounded-full"
+        class="flex justify-center items-center gap-2 md:text-lg hover:bg-stone-500/20 transition duration-300 px-4 py-2 rounded-full"
       >
         <Icon
           :name="link.icon"

@@ -13,7 +13,7 @@
     </p>
     <span
       ref="loadingRefs"
-      class="loading flex gap-2 absolute"
+      class="loading flex gap-1.5 sm:gap-2 absolute"
     >
       <div
         v-for="i in 3"
@@ -100,7 +100,7 @@ onMounted(() => {
 
 <style>
 .bubble{
-@apply px-5 py-3 flex justify-center items-center gap-3 w-min  text-white bg-white dark:bg-stone-200 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold whitespace-pre  shadow
+@apply px-3 sm:px-5 py-1.5 sm:py-3 flex justify-center items-center gap-3 w-min  text-white bg-white dark:bg-stone-200 rounded-tr-full rounded-l-full font-[Poppins] text-center tracking-wider font-semibold whitespace-pre  shadow
 }
 
 .message {
@@ -108,6 +108,6 @@ onMounted(() => {
 }
 
 .dot {
-@apply w-4 h-4 bg-gray-500 rounded-full
+@apply w-3 sm:w-4 h-3 sm:h-4 bg-gray-500 rounded-full
 }
 </style>
