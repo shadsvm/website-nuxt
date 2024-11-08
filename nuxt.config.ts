@@ -22,15 +22,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  eslint: {
-    config: {
-      stylistic: {
-        indent: 2,
-        semi: false,
-        quotes: 'single',
-      },
-    },
-  },
   googleFonts: {
     families: {
       'Lato': true,
